@@ -1,34 +1,29 @@
 # Nuget
-Source/packages/*
-Source/**/nupkg
+Source/packages/
+nupkg/
+
+# Binaries
+bin/
+obj/
+Binaries/**/*.dll
+Binaries/**/*.mdb
+Binaries/**/*.exe
+Binaries/**/*.pdb
+Binaries/**/*.config
+Binaries/**/*.vshost.exe.manifest
+Binaries/**/*.json
 
 # Tests
 Source/UnitTests/TestResult.xml
-Source/UnitTests/*/bin
-Source/UnitTests/*/obj
 Test/**/Output
 TestResult.xml
-
-# Binaries
-Source/*/bin
-Source/*/obj
-Source/Provers/*/bin
-Source/Provers/*/obj
-Binaries/*.dll
-Binaries/*.mdb
-Binaries/*.exe
-Binaries/*.pdb
-Binaries/*.config
-Binaries/*.vshost.exe.manifest
 
 # Editor temporary files
 .*.swp
 
 # Visual Studio files
 Source/_ReSharper.Boogie
-Source/Provers/*/*.user
-Source/*/*.user
-Source/*.user
+Source/**/*.user
 Source/*.suo
 Source/*.cache
 Source/.vs/

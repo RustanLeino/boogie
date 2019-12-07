@@ -9,12 +9,14 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <AssemblyName>BoogieDriver</AssemblyName>
+    <AssemblyName>Boogie</AssemblyName>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <OutputPath>..\..\Binaries\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <DefineConstants>COREFX_SUBSET</DefineConstants>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageOutputPath>nupkg</PackageOutputPath>
+    <PackageOutputPath>..\..\Binaries\nupkg</PackageOutputPath>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>boogie</ToolCommandName>
   </PropertyGroup>
