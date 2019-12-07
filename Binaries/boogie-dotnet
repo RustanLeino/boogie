@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# Wrapper script to run Boogie.dll using dotnet
+#
+# Adapted from https://github.com/Microsoft/dafny/blob/master/Binaries/dafny
+
+DOTNET=$(which dotnet)
+
+# find the source directory for this script even if it's been symlinked
+# from https://stackoverflow.com/questions/59895/
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do
+    DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
+BOOGIE_ROOT="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+BOOGIE="$BOOGIE_ROOT/Boogie.dll"
+
+if [[ ! -x "$DOTNET" ]]; then
+    echo "Error: Cannot find dotnet."
+    exit 1
+fi
+
+if [[ ! -e "$BOOGIE" ]]; then
+    echo "Error: Boogie.dll not found at $BOOGIE."
+    exit 1
+fi
+
+"$DOTNET" "$BOOGIE" "$@"
